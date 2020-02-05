@@ -33,7 +33,7 @@ const handleFile = (input, output, opts) => fsP.readFile(input).then(data => {
 
 			const ret = {
 				data: buf,
-				path: dest + ".webp"
+				path: (fileType(buf) && fileType(buf).ext === 'webp') ? dest + ".webp" : dest
 			};
 
 			if (!dest) {
